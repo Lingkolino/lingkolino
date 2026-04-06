@@ -1,97 +1,100 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lingko Lino Properti</title>
-  <style>
-    body {margin:0;font-family:Arial;background:linear-gradient(to bottom,#b8963f,#f5e6c8);color:#333;}
-    header {text-align:center;padding:40px;background:#7a5c1f;color:white;}
-    h1{margin:0;font-size:34px}
-    .container{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;padding:40px}
-    .card{background:white;border-radius:12px;width:300px;padding:20px;box-shadow:0 6px 15px rgba(0,0,0,0.25);transition:0.3s}
-    .card:hover{transform:scale(1.05)}
-    .price{font-size:24px;color:#7a5c1f;font-weight:bold}
-    .gallery{text-align:center;padding:40px}
-    .gallery img{width:280px;border-radius:10px;margin:10px}
-    .cta{text-align:center;padding:40px;background:#fff3d6}
-    .btn{display:inline-block;padding:14px 22px;background:#25D366;color:white;border-radius:10px;text-decoration:none;font-weight:bold}
-    .form{padding:40px;text-align:center}
-    input,textarea{width:80%;padding:10px;margin:10px;border-radius:8px;border:1px solid #ccc}
-    footer{text-align:center;padding:20px;background:#7a5c1f;color:white}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lingko Lino Properti</title>
+<style>
+body{margin:0;font-family:Arial;background:#0f172a;color:#e5e7eb}
+nav{position:sticky;top:0;background:#020617;padding:15px;text-align:center}
+nav a{color:#facc15;margin:0 15px;text-decoration:none;font-weight:bold}
+header{padding:60px;text-align:center;background:linear-gradient(135deg,#111827,#7a5c1f)}
+header img{width:130px;animation:float 3s infinite;filter:drop-shadow(0 0 10px gold)}
+@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
+.section{padding:50px;max-width:1100px;margin:auto}
+.grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
+.card{background:#1f2937;border-radius:12px;padding:15px;width:280px;transition:.3s}
+.card:hover{transform:scale(1.05);box-shadow:0 0 20px gold}
+.card img{width:100%;border-radius:10px}
+.btn{display:inline-block;margin-top:10px;padding:10px;background:#25D366;color:#fff;border-radius:8px;text-decoration:none}
+input,textarea{width:90%;padding:10px;margin:5px;border-radius:8px;border:none}
+footer{text-align:center;padding:20px;background:#020617}
+</style>
 </head>
 <body>
 
-<header>
-  <h1>Lingko Lino Properti</h1>
-  <p>Tingkatkan Nilai Properti Anda dengan Biaya Terjangkau</p>
+<nav>
+<a href="#home">Home</a>
+<a href="#tentang">Tentang</a>
+<a href="#properti">Properti</a>
+<a href="#kontak">Kontak</a>
+</nav>
+
+<header id="home">
+<img src="logo.png">
+<h1>Lingko Lino Properti</h1>
+<p style="color:#facc15">Trusted Property Solutions</p>
 </header>
 
-<section class="container">
-  <div class="card">
-    <h2>Paket Basic</h2>
-    <ul>
-      <li>Foto Properti</li>
-      <li>Peta Lokasi</li>
-      <li>Posting Marketplace</li>
-    </ul>
-    <div class="price">Rp 1.500.000</div>
-  </div>
-
-  <div class="card">
-    <h2>Paket Standard</h2>
-    <ul>
-      <li>Foto & Video</li>
-      <li>Analisis Akses</li>
-      <li>Promosi Sosial Media</li>
-    </ul>
-    <div class="price">Rp 3.000.000</div>
-  </div>
-
-  <div class="card">
-    <h2>Paket Premium</h2>
-    <ul>
-      <li>Drone Video</li>
-      <li>Analisis Investasi</li>
-      <li>Promosi Intensif</li>
-    </ul>
-    <div class="price">Mulai Rp 5.000.000</div>
-  </div>
+<section class="section" id="tentang">
+<h2 style="color:#facc15">Tentang Kami</h2>
+<p>Layanan properti terpadu berbasis data dan visual profesional untuk meningkatkan nilai jual properti Anda.</p>
 </section>
 
-<section class="gallery">
-  <h2>Properti Kami</h2>
-  <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994">
-  <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be">
+<section class="section">
+<h2 style="color:#facc15">Tambah Properti</h2>
+<input id="nama" placeholder="Nama Properti">
+<input id="lokasi" placeholder="Lokasi / Maps Link">
+<input id="img" placeholder="Link Foto">
+<textarea id="desk" placeholder="Deskripsi"></textarea>
+<button onclick="tambahProperti()" class="btn">Simpan Properti</button>
 </section>
 
-<section class="cta">
-  <h2>Diskon Hingga 50%</h2>
-  <p>Hubungi sekarang untuk konsultasi gratis</p>
-  <a href="https://wa.me/6281234567890" class="btn">Chat WhatsApp</a>
+<section class="section" id="properti">
+<h2 style="color:#facc15">Listing Properti</h2>
+<div class="grid" id="list"></div>
 </section>
 
-<section class="form">
-  <h2>Pesan Sekarang</h2>
-  <input type="text" id="nama" placeholder="Nama Anda"><br>
-  <input type="text" id="lokasi" placeholder="Lokasi Properti"><br>
-  <textarea id="pesan" placeholder="Kebutuhan Anda"></textarea><br>
-  <button onclick="kirimWA()" class="btn">Kirim ke WhatsApp</button>
+<section class="section" id="kontak">
+<h2 style="color:#facc15">Kontak</h2>
+<p>☎ 087760664055</p>
+<p>📧 lingkolinoproperty@gmail.com</p>
+<a href="https://wa.me/6287760664055" class="btn">Chat WhatsApp</a>
 </section>
 
 <footer>
-  <p>© 2026 Lingko Lino Properti</p>
+<p>© 2026 Lingko Lino Properti</p>
 </footer>
 
 <script>
-function kirimWA(){
-  var nama=document.getElementById('nama').value;
-  var lokasi=document.getElementById('lokasi').value;
-  var pesan=document.getElementById('pesan').value;
-  var url="https://wa.me/6281234567890?text=Halo saya "+nama+" ingin promosi properti di "+lokasi+". Pesan: "+pesan;
-  window.open(url,'_blank');
+let data=JSON.parse(localStorage.getItem('properti'))||[];
+
+function render(){
+const list=document.getElementById('list');
+list.innerHTML='';
+data.forEach(item=>{
+list.innerHTML+=`<div class="card">
+<img src="${item.img}">
+<h3>${item.nama}</h3>
+<p>${item.desk}</p>
+<a href="${item.lokasi}" target="_blank" class="btn">Lihat Lokasi</a>
+<a href="https://wa.me/6287760664055" class="btn">Minat</a>
+</div>`;
+});}
+
+function tambahProperti(){
+const nama=document.getElementById('nama').value;
+const lokasi=document.getElementById('lokasi').value;
+const img=document.getElementById('img').value;
+const desk=document.getElementById('desk').value;
+
+const item={nama,lokasi,img,desk};
+data.push(item);
+localStorage.setItem('properti',JSON.stringify(data));
+render();
 }
+
+render();
 </script>
 
 </body>
