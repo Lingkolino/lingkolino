@@ -4,107 +4,91 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lingko Lino Properti</title>
+
 <style>
-body{margin:0;font-family:Arial;background:#0f172a;color:#e5e7eb}
-nav{position:sticky;top:0;background:#020617;padding:15px;text-align:center}
-nav a{color:#facc15;margin:0 12px;text-decoration:none;font-weight:bold}
-header{padding:60px;text-align:center;background:linear-gradient(135deg,#111827,#7a5c1f)}
-header img{width:130px;animation:float 3s infinite;filter:drop-shadow(0 0 10px gold)}
-@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
-.section{padding:50px;max-width:1100px;margin:auto}
+*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
+body{background:#020617;color:#e5e7eb}
+
+/* NAV */
+nav{position:fixed;width:100%;top:0;background:#000;padding:15px;text-align:center;z-index:1000}
+nav a{color:#facc15;margin:0 15px;text-decoration:none;font-weight:bold}
+
+/* HERO */
+.hero{
+height:100vh;display:flex;flex-direction:column;
+justify-content:center;align-items:center;text-align:center;
+background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+url('https://images.unsplash.com/photo-1560185127-6ed189bf02f4');
+background-size:cover;
+}
+.hero img{width:130px;filter:drop-shadow(0 0 10px gold)}
+.hero h1{font-size:45px}
+.hero p{color:#facc15}
+
+.btn{padding:10px 20px;background:#facc15;color:#000;border-radius:8px;text-decoration:none}
+
+/* SECTION */
+.section{padding:80px 20px;max-width:1100px;margin:auto}
+.section h2{color:#facc15}
+
+/* GRID */
 .grid{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
-.card{background:#1f2937;border-radius:12px;padding:15px;width:280px;transition:.3s}
-.card:hover{transform:scale(1.05);box-shadow:0 0 20px gold}
+.card{background:#111827;padding:15px;border-radius:10px;width:280px}
 .card img{width:100%;border-radius:10px}
-.btn{display:inline-block;margin-top:10px;padding:10px;background:#25D366;color:#fff;border-radius:8px;text-decoration:none}
-input,textarea{width:90%;padding:10px;margin:5px;border-radius:8px;border:none}
-footer{text-align:center;padding:20px;background:#020617}
+
+/* FORM */
+input,textarea{
+width:90%;padding:10px;margin:5px;border-radius:8px;border:none
+}
+
+/* MAP */
+iframe{width:100%;height:300px;border-radius:10px;margin-top:10px}
+
+footer{text-align:center;padding:20px;background:#000}
 </style>
 </head>
+
 <body>
 
 <nav>
 <a href="#home">Home</a>
-<a href="#tentang">Tentang</a>
-<a href="#profil">Profil</a>
-<a href="#layanan">Layanan</a>
-<a href="#keunggulan">Keunggulan</a>
+<a href="#input">Input</a>
 <a href="#properti">Properti</a>
 <a href="#kontak">Kontak</a>
 </nav>
 
-<header id="home">
+<!-- HERO -->
+<section class="hero" id="home">
 <img src="logo.png">
 <h1>Lingko Lino Properti</h1>
-<p style="color:#facc15">Trusted Property Solutions</p>
-</header>
-
-<section class="section" id="tentang">
-<h2 style="color:#facc15">Tentang Kami</h2>
-<p>Lingko Lino Properti adalah layanan properti terpadu yang menghadirkan solusi penjualan tanah dan rumah berbasis data, analisis lokasi, serta visualisasi profesional untuk meningkatkan nilai jual properti.</p>
+<p>Trusted Property Solutions</p>
 </section>
 
-<section class="section" id="profil">
-<h2 style="color:#facc15">Profil Usaha</h2>
-<p>Kami bergerak di bidang jasa pemasaran dan pendukung properti yang mencakup penjualan, pemetaan lokasi, pengukuran, serta dokumentasi foto dan video properti.</p>
-</section>
+<!-- INPUT PROPERTI -->
+<section class="section" id="input">
+<h2>Tambah Properti</h2>
 
-<section class="section">
-<h2 style="color:#facc15">Visi</h2>
-<p>Menjadi perusahaan properti terpercaya berbasis data, profesional, transparan, dan berkelanjutan.</p>
-<h2 style="color:#facc15">Misi</h2>
-<ul>
-<li>Menyediakan layanan profesional dan berintegritas</li>
-<li>Menyajikan data teknis yang akurat</li>
-<li>Meningkatkan nilai jual properti melalui visualisasi</li>
-<li>Membangun kepercayaan jangka panjang</li>
-</ul>
-</section>
-
-<section class="section" id="layanan">
-<h2 style="color:#facc15">Ruang Lingkup Layanan</h2>
-<div class="grid">
-<div class="card"><h3>Jual Properti</h3><p>Penjualan tanah & rumah profesional</p></div>
-<div class="card"><h3>Pemetaan</h3><p>Analisis lokasi & akses</p></div>
-<div class="card"><h3>Foto & Video</h3><p>Visual profesional & drone</p></div>
-<div class="card"><h3>Pengukuran</h3><p>Pengukuran luas & batas tanah</p></div>
-</div>
-</section>
-
-<section class="section" id="keunggulan">
-<h2 style="color:#facc15">Keunggulan Usaha</h2>
-<ul>
-<li>Layanan satu pintu (one stop service)</li>
-<li>Berbasis data dan analisis</li>
-<li>Visualisasi profesional</li>
-<li>Proses cepat dan efisien</li>
-</ul>
-</section>
-
-<section class="section">
-<h2 style="color:#facc15">Tambah Properti</h2>
 <input id="nama" placeholder="Nama Properti">
-<input id="lokasi" placeholder="Link Google Maps">
-<input id="img" placeholder="Link Foto">
+<input id="harga" placeholder="Harga">
+<input id="img" placeholder="Link Gambar">
+<input id="maps" placeholder="Link Google Maps">
 <textarea id="desk" placeholder="Deskripsi"></textarea>
-<button onclick="tambahProperti()" class="btn">Simpan Properti</button>
+
+<button onclick="tambah()" class="btn">Simpan</button>
 </section>
 
+<!-- LISTING -->
 <section class="section" id="properti">
-<h2 style="color:#facc15">Listing Properti</h2>
+<h2>Listing Properti</h2>
 <div class="grid" id="list"></div>
 </section>
 
-<section class="section">
-<h2 style="color:#facc15">Penutup</h2>
-<p>Kami siap menjadi mitra terpercaya dalam membantu penjualan dan pengelolaan properti Anda secara profesional, transparan, dan bernilai tinggi.</p>
-</section>
-
+<!-- KONTAK -->
 <section class="section" id="kontak">
-<h2 style="color:#facc15">Kontak</h2>
+<h2>Kontak</h2>
 <p>☎ 087760664055</p>
 <p>📧 lingkolinoproperty@gmail.com</p>
-<a href="https://wa.me/6287760664055" class="btn">Chat WhatsApp</a>
+<a href="https://wa.me/6287760664055" class="btn">Chat WA</a>
 </section>
 
 <footer>
@@ -112,29 +96,43 @@ footer{text-align:center;padding:20px;background:#020617}
 </footer>
 
 <script>
-let data=JSON.parse(localStorage.getItem('properti'))||[];
+let data = JSON.parse(localStorage.getItem('properti')) || [];
+
 function render(){
-const list=document.getElementById('list');
-list.innerHTML='';
-data.forEach(item=>{
-list.innerHTML+=`<div class="card">
+const list = document.getElementById('list');
+list.innerHTML = '';
+
+data.forEach(item => {
+list.innerHTML += `
+<div class="card">
 <img src="${item.img}">
 <h3>${item.nama}</h3>
+<p>${item.harga}</p>
 <p>${item.desk}</p>
-<a href="${item.lokasi}" target="_blank" class="btn">Lihat Lokasi</a>
+
+<a href="${item.maps}" target="_blank" class="btn">Lihat Lokasi</a>
 <a href="https://wa.me/6287760664055" class="btn">Minat</a>
-</div>`;
-});}
-function tambahProperti(){
-const nama=document.getElementById('nama').value;
-const lokasi=document.getElementById('lokasi').value;
-const img=document.getElementById('img').value;
-const desk=document.getElementById('desk').value;
-const item={nama,lokasi,img,desk};
+
+<iframe src="${item.maps.replace('https://www.google.com/maps','https://www.google.com/maps/embed')}" loading="lazy"></iframe>
+</div>
+`;
+});
+}
+
+function tambah(){
+const item = {
+nama: document.getElementById('nama').value,
+harga: document.getElementById('harga').value,
+img: document.getElementById('img').value,
+maps: document.getElementById('maps').value,
+desk: document.getElementById('desk').value
+};
+
 data.push(item);
-localStorage.setItem('properti',JSON.stringify(data));
+localStorage.setItem('properti', JSON.stringify(data));
 render();
 }
+
 render();
 </script>
 
